@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  gap: 50px;
+
+  &__list {
+    @include d-flex-center;
+    gap: 30px;
+
+    &-item {
+      display: flex;
+      align-items: flex-end;
+      color: $c-crimson-m;
+      gap: 3px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+
+    &-search {
+      @include d-flex-center;
+      background-color: $c-white;
+      border: 1px solid $c-crimson-m;
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      outline: none;
+    }
+
+    &-cart {
+      @include d-flex-center;
+      width: 137px;
+      height: 60px;
+      outline: none;
+      border: none;
+      background-color: $c-crimson-m;
+      border-radius: 50px;
+
+    }
+  }
+}
