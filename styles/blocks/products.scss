@@ -1,0 +1,85 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 120%;
+    color: $c-crimson-m;
+
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin-bottom: 70px;
+  }
+
+  &__button {
+    @include d-flex-center;
+    position: relative;
+    font-family: "Varela Round";
+    font-size: 23px;
+    line-height: 117%;
+    padding: 21px 65px;
+    gap: 8px;
+    color: $c-crimson-m;
+    border: 2px solid $c-crimson-m;
+    background: transparent;
+    border-radius: 50px;
+    transition: $anim-time;
+
+    &::after {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      width: 350px;
+      height: 70px;
+      
+      transform: translate(5px, 5px);
+
+      background: $c-crimson-m;
+      opacity: 0.1;
+      border-radius: 50px;
+      transition: $anim-time;
+    }
+
+    &:hover {
+      color: $c-white;
+      background: $c-crimson-m;
+
+      &::after {
+        opacity: 1;
+        transform: translate(0, 0)
+      }
+
+      .products__button-icon path {
+        stroke: $c-white;
+      }
+    }
+  }
+
+  &__fruit {
+    position: absolute;
+
+    &--1 {
+      left: 0;
+      transform: translate(-40%, -50%);
+    }
+
+    &--2 {
+      right: 0;
+      transform: translate(50%, 75%);
+    }
+  }
+}

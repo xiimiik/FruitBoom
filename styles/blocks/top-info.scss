@@ -1,0 +1,72 @@
+.top-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @extend %rubik-15;
+  color: $c-taupe;
+  box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.07);
+  z-index: 11;
+
+  &__button {
+    @include d-flex-center;
+    @extend %rubik-15;
+    width: 125px;
+    height: 30px;
+
+    background-color: $c-crimson-m;
+    border: 2px solid $c-crimson-m;
+    color: $c-white;
+    border-radius: 12px;
+
+    transition: $anim-time;
+    &:hover {
+      background-color: transparent;
+      color: $c-crimson-m
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 50px;
+
+    padding: 8px 0;
+
+    &-item {
+      position: relative;
+
+      &:not(:last-child)::after {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: $c-crimson-m;
+        opacity: 0.1;
+        border-radius: 2px;
+        top: 0;
+        right: -24px;
+      }
+    }
+  }
+
+  &__link {
+    @include d-flex-center;
+
+    gap: 12px;
+
+    &-image {
+      background: linear-gradient(262deg, #d8144f 0%, #ff7a00 100%);
+      border-radius: 43%;
+    }
+  }
+
+  &__text {
+    position: relative;
+    @include link-animation;
+    transition: $anim-time;
+    &:hover {
+      color: $c-crimson-m;
+    }
+  }
+}

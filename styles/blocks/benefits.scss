@@ -1,0 +1,50 @@
+.benefits {
+  width: max-content;
+  background-color: $c-white;
+  border: 2px solid $c-crimson-m;
+  outline: 10px solid $c-white;
+  border-radius: 25px;
+
+  padding: 20px 30px;
+
+  &__image {
+    width: 72px;
+    height: 72px;
+
+    background: linear-gradient(236.89deg, #d8144f 21.1%, #ff7a00 82.48%);
+    opacity: 0.8;
+    border-radius: 28px;
+  }
+
+  &__list {
+    display: flex;
+
+    gap: 70px;
+  }
+
+  &__item {
+    @include d-flex-center;
+    gap: 15px;
+    position: relative;
+
+      &:not(:last-child)::after {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: $c-crimson-m;
+        opacity: 0.1;
+        border-radius: 2px;
+        top: 0;
+        right: -24px;
+      }
+  }
+
+  &__text {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: $c-green-m;
+  }
+}

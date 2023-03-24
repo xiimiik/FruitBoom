@@ -1,0 +1,116 @@
+.card {
+  @include d-flex-colum;
+  width: 254px;
+  padding: 10px;
+
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+
+  &__type {
+    @include d-flex-center;
+    align-self: end;
+    height: 23px;
+    padding: 5px 10px;
+    width: max-content;
+    
+    margin-bottom: 10px;
+    
+    color: $c-crimson-m;
+    text-align: center;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    border: 1px solid $c-crimson-m;
+
+    &--green {
+      color: $c-green-s;
+      border: 1px solid $c-green-s;
+    }
+
+    &--gray {
+      color: $c-gray-s;
+      border: 1px solid $c-gray-s;
+    }
+  }
+
+  &__image {
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    font-size: 17px;
+    color: $c-gray-m;
+
+    margin-bottom: 13px;
+  }
+
+  &__value {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__price {
+    font-family: "Rubik";
+    font-size: 20px;
+    color: $c-crimson-m;
+
+    &::first-letter {
+      color: $c-green-m;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    gap: 18px;
+  }
+
+  &__button {
+    @include d-flex-center;
+    @extend %varela-15;
+    gap: 10px;
+    padding: 10px 22px;
+    width: 104px;
+    border: 2px solid $c-crimson-m;
+    border-radius: 50px;
+    background-color: $c-crimson-m;
+    color: $c-white;
+    transition: $anim-time;
+
+    &:hover {
+      background-color: transparent;
+      color: $c-crimson-m;
+
+      .card__button-cart-icon path {
+        fill: $c-crimson-m;
+      }
+    }
+
+    &-cart-icon {
+      width: 18px;
+      height: 18px
+    }
+  }
+
+  &__more-info {
+    @include d-flex-center;
+    display: flex;
+    gap: 10px;
+    
+    transition: $anim-time;
+
+    .card__more-info-text {
+      position: relative;
+      @include link-animation;
+    }
+
+    &-icon {
+      transition: $anim-time;
+    }
+
+    &:hover {
+      .card__more-info-icon {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

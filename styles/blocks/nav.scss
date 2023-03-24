@@ -7,6 +7,20 @@
     gap: 30px;
 
     &-item {
+      position: relative;
+
+      @include link-animation;
+
+      &:first-child {
+        &:hover {
+          &::after {
+            width: 75%;
+          }
+        }
+      }
+    }
+
+    &-link {
       display: flex;
       align-items: flex-end;
       color: $c-crimson-m;
@@ -25,18 +39,56 @@
       width: 60px;
       height: 60px;
       border-radius: 50px;
-      outline: none;
+      transition: $anim-time;
+
+      &:hover {
+        background-color: $c-crimson-m;
+
+        .nav__buttons-search-icon path {
+          fill: $c-white;
+        }
+      }
     }
 
     &-cart {
       @include d-flex-center;
+      @extend %varela-15;
+      position: relative;
       width: 137px;
       height: 60px;
-      outline: none;
-      border: none;
       background-color: $c-crimson-m;
+      border: 2px solid $c-crimson-m;
       border-radius: 50px;
+      color: $c-white;
+      transition: $anim-time;
 
+      &:hover {
+        background-color: transparent;
+        color: $c-crimson-m;
+
+        .nav__buttons-cart-icon path {
+          fill: $c-crimson-m;
+        }
+      }
+
+      &::after {
+        content: "55";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50px;
+        background-color: $c-white;
+        border: 1px solid $c-crimson-m;
+        outline: 1px solid $c-white;
+        color: $c-crimson-m;
+      }
     }
   }
 }
+
+

@@ -1,25 +1,3 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
-  }
-}
-
-@mixin square($size) {
-  width: $size;
-  height: $size;
-}
-
-@mixin boxShadow($color) {
-  box-shadow: (
-    rgba($color, 0.4) 5px 5px,
-    rgba($color, 0.3) 10px 10px,
-    rgba($color, 0.2) 15px 15px,
-    rgba($color, 0.1) 20px 20px,
-    rgba($color, 0.05) 25px 25px
-  );
-}
-
 @mixin d-flex-colum {
   display: flex;
   flex-direction: column;
@@ -32,37 +10,20 @@
 }
 
 @mixin link-animation {
-  background-image: linear-gradient(
-    to right,
-    $c-turquoise,
-    $c-turquoise 50%,
-    $c-black 50%
-  );
-  background-size: 200% 100%;
-  background-position: -100%;
-  padding: 5px 0;
-  position: relative;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-in-out;
-
-  &::before {
-    content: "";
-    background: #54b3d6;
-    display: block;
+  &::after {
     position: absolute;
-    bottom: -3px;
+    content: "";
+    height: 1px;
+    bottom: -1px;
     left: 0;
+    background-color: $c-crimson-m;
     width: 0;
-    height: 2px;
-    transition: all 0.3s ease-in-out;
+    transition: $anim-time;
   }
 
   &:hover {
-    background-position: 0;
-  }
-
-  &:hover::before {
-    width: 100%;
+    &::after {
+      width: 100%;
+    }
   }
 }
